@@ -6,10 +6,9 @@ $(document).ready(function(){
 
     });
     $('#btn2').on('click',function(){
-       $('#row1').css('background-color','green') ;
-       $('#row2').css('background-color','green') ;
-       $('#row3').css('background-color','green') ;
-       $('#row4').css('background-color','green') ;
+        $("td").parents("tr").css({"background-color": "green"});
+        $("td").parents("tr").first().css({"background-color": "blue"});
+    
     });
     $('#btn4').on('click',function(){
         $('#table1').hide();
@@ -19,9 +18,13 @@ $(document).ready(function(){
         $('#table1').show();
         $('#btn5').hide();
     });
-    $('btn3').on('click',function(){
-        
+    $('#btn3').on('click',function(){
+       var a = '<table>'
+        a += $('button').parents('table').html();
+        a+= '</table>'
+        document.getElementById("outer").innerHTML= a;
+    });
+
     });
     
 
-});
